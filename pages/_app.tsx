@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
 import Navbar from "../components/Navbar";

@@ -2,7 +2,6 @@ import ChatContainer from "../../components/ChatContainer";
 import Container from "../../components/Container";
 import { prisma } from "../../lib/prisma";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
-import { Audio } from "react-loader-spinner";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export type FallBackDataType = {
@@ -20,7 +19,6 @@ export type FallBackData = {
 
 const Chat: React.FC<FallBackDataType> = ({ fallbackData, user }) => {
   const { data: session, status } = useSession();
-  console.log(user);
   return (
     <Container>
       <div className="flex flex-col justify-center items-start max-w-2xl w-full border-gray-200 dark:border-gray-700 mx-auto pb-16 pt-16">
@@ -34,7 +32,7 @@ const Chat: React.FC<FallBackDataType> = ({ fallbackData, user }) => {
 
         {status === "loading" ? (
           <div className="flex flex-row w-full py-36 justify-center items-center">
-            <Audio height="100" width="100" color="grey" ariaLabel="loading" />
+            <p className="text-xl font-semibold">Loading...</p>
           </div>
         ) : (
           <>
