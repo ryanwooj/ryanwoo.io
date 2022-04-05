@@ -22,12 +22,12 @@ const FeaturedContainer: React.FC<FeaturedContainerType> = ({
     <div className="container">
       <div className="text-center text-2xl my-2">{subtitle}</div>
       <div className="flex justify-end">
-        <Link href={link ? link : "/"}>
+        <Link href={link ? link : "/"} passHref>
           <a className="text-right text-lg hover:text-sky-500">{title}</a>
         </Link>
       </div>
       <div className="flex justify-center my-4">
-        <Link href={link ? link : "/"}>
+        <Link href={link ? link : "/"} passHref>
           <Image
             className=""
             src={image ? image : "/"}

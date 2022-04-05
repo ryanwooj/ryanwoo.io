@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FallBackData } from "../pages/chat";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 interface ChatType {
   fallbackData: [FallBackData];
@@ -61,11 +62,15 @@ const ChatContainer: React.FC<ChatType> = ({ fallbackData, user }) => {
         <div className="w-full">
           <div className="w-full flex items-center p-3 border-b border-gray-300">
             {user && (
-              <img
-                className="object-cover w-10 h-10 rounded-full"
-                src={user.image}
-                alt="username"
-              />
+              <div className="relative mr-auto w-10 h-10">
+                <Image
+                  alt="User Image"
+                  layout="fill"
+                  src={user.image}
+                  objectFit="cover"
+                  className="rounded-full"
+                />
+              </div>
             )}
             <span className="block ml-2 font-bold text-gray-600 dark:text-white">
               {(user && user.name) || "Unknown User: Please log in"}

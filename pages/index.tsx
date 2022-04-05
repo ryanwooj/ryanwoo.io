@@ -21,8 +21,8 @@ const Home: NextPage = () => {
               <span className="font-semibold">Jet Bridge LLC</span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-16">
-              Helping clients build a faster web. I'm all about web development,
-              serverless, and React / Next.js.
+              Helping clients build a faster web. I&apos;m all about web
+              development, serverless, and React / Next.js.
             </p>
           </div>
           <div className="w-32 h-32 relative mb-8 sm:mb-0 mr-auto">

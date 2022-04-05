@@ -10,8 +10,8 @@ const Featured = () => {
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
           Featured
         </h3>
-        {featured.map((item) => (
-          <FeaturedCard featured={item} />
+        {featured.map((item, idx) => (
+          <FeaturedCard key={idx} featured={item} />
         ))}
       </div>
     </Container>
