@@ -14,9 +14,10 @@ const SingleExperience = () => {
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
             Experiences
           </h3>
-          {experiences && (
+          {(experiences && (
             <ExperienceContainer experience={experiences[Number(pid) - 1]} />
-          )}
+          )) ||
+            ""}
         </div>
       </div>
     </Container>
