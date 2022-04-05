@@ -21,20 +21,23 @@ const ExperienceContainer: React.FC<ExperienceContainerType> = ({
 }) => {
   return (
     <div className="container">
-      <div className="text-center text-xl my-4">{company}</div>{" "}
-      <div className="text-right text-lg">{dates}</div>
-      <div className="text-right text-lg">{location}</div>
+      <div className="text-center text-xl my-4">
+        {(company && company) || ""}
+      </div>
+      <div className="text-right text-lg">{(dates && dates) || ""}</div>
+      <div className="text-right text-lg">{(location && location) || ""}</div>
       <div>
-        {titles.map((item, idx) => (
-          <div className="desc" key={idx}>
-            <div className="text-left text-lg">{item.title}</div>
-            {item.description.map((item, idx) => (
-              <p key={idx} className="text-left text-md">
-                {item}
-              </p>
-            ))}
-          </div>
-        ))}
+        {titles &&
+          titles.map((item, idx) => (
+            <div className="desc" key={idx}>
+              <div className="text-left text-lg">{item.title}</div>
+              {item.description.map((item, idx) => (
+                <p key={idx} className="text-left text-md">
+                  {item}
+                </p>
+              ))}
+            </div>
+          ))}
       </div>
     </div>
   );
