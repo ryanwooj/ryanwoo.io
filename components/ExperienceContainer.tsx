@@ -21,7 +21,7 @@ const ExperienceContainer: React.FC<ExperienceContainerType> = ({
 }) => {
   return (
     <div className="container">
-      <div className="text-center text-xl my-4">{company && company}</div>{" "}
+      <div className="text-center text-xl my-4">{company}</div>{" "}
       <div className="text-right text-lg">{dates}</div>
       <div className="text-right text-lg">{location}</div>
       <div>
