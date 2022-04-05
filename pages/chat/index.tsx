@@ -28,7 +28,7 @@ const Chat: React.FC<FallBackDataType> = ({ fallbackData, user }) => {
           <h3 className="text-xl font-semibold leading-3">Ananymous Chat</h3>
           <br />
           <h4 className="text-lg leading-3">
-            Talk Free! It's fully ananymous.
+            Talk Free! It&apos;s fully ananymous.
           </h4>
         </div>
 

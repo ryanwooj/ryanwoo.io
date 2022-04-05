@@ -1,6 +1,7 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { MdLightMode, MdNightlightRound } from "react-icons/md";
+import Link from "next/link";
 
 export interface NavType {
   open: boolean;
@@ -14,17 +15,17 @@ export interface NavLinkType {
 
 function NavLink({ to, children }: NavLinkType) {
   return (
-    <a href={to} className={`mr-8`}>
-      {children}
-    </a>
+    <Link href={to}>
+      <a className={`mr-8`}>{children}</a>
+    </Link>
   );
 }
 
 function MobileNavLink({ to, children }: NavLinkType) {
   return (
-    <a href={to} className={`text-xl font-normal my-4`}>
-      {children}
-    </a>
+    <Link href={to} passHref>
+      <a className={`text-xl font-normal my-4`}>{children}</a>
+    </Link>
   );
 }
 
@@ -37,9 +38,9 @@ function MobileNav({ open, setOpen }: NavType) {
     >
       <div className="flex items-center justify-center filter drop-shadow-md bg-gray-50 dark:bg-gray-900 h-20">
         {/*logo container*/}
-        <a className="text-xl font-semibold" href="/">
-          RW
-        </a>
+        <Link href="/" passHref>
+          <a className="text-xl font-semibold">RW</a>
+        </Link>
       </div>
       <div className="flex flex-col ml-4 mt-6">
         <MobileNavLink to="/"> Home</MobileNavLink>
