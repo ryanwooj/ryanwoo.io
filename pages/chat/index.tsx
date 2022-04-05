@@ -3,6 +3,7 @@ import Container from "../../components/Container";
 import { prisma } from "../../lib/prisma";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
 import { Audio } from "react-loader-spinner";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 export type FallBackDataType = {
   fallbackData: [FallBackData];
@@ -64,7 +65,7 @@ const Chat: React.FC<FallBackDataType> = ({ fallbackData, user }) => {
 
 export default Chat;
 
-export const getServerSideProps = async ({ req }) => {
+export const getServerSideProps = async ({ req }: any) => {
   const session = await getSession({ req });
 
   const messages = await prisma.message.findMany({
